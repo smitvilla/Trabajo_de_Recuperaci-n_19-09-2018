@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+int a=0;
+int m=0;
+int b=0;
+int arc;
+int v[6]={2,6,4,5,3,1};
+void rotations ();
+
+int main() {
+
+
+
+
+    for(int i=0;i<6;i++)
+    for(int j=i+1;j<6;j++)
+        if(v[i]>v[j])
+        {
+            arc=v[i];
+            v[i]=v[j];
+            v[j]=arc;
+        }
+
+
+    cout<<" "<<endl;
+    cout<<"LISTA ORDENADA DEL VECTOR"<<endl;
+    for (int i=0;i<6;i++){
+
+        cout<<v[i]<<endl;
+
+    }
+     rotations ();
+
+
+
+
+
+
+    return 0;
+}
+
+
+void rotations ()
+{
+    cout<<"ROTAR? (1)"<<"\n";
+    cin>>m;
+    if (m==1)
+
+        {
+        a=v[0];
+        v[0] = v[5];
+        v[5] = a;
+
+
+        for(int i=1;i<6;i++)
+        for(int j=i+1;j<6;j++)
+            if(v[i]>v[j])
+            {
+                arc=v[i];
+                v[i]=v[j];
+                v[j]=arc;
+            }
+
+
+
+                cout<<" "<<endl;
+                cout<<"LISTA ORDENADA DE LOS ELEMENTOS"<<endl;
+                for (int i=0;i<6;i++){
+                    cout<<v[i]<<endl;
+            }
+
+
+    }
+}
